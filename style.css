@@ -18,3 +18,18 @@
   transform: scale(1.2);
   filter: drop-shadow(0 0 5px #bfbfbf);
 }
+
+#projects .card {
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+#projects .card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+#projects .card img {
+  height: 200px;
+  object-fit: cover;
+}
+

@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blood Donor IVR Caller System</title>
+  <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../../css/style.css">
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+  <style>
+    body {
+      scroll-behavior: smooth;
+    }
+    .sidebar {
+      position: fixed;
+      top: 70px;
+      left: 0;
+      height: 100%;
+      width: 220px;
+      background-color: #f8f9fa;
+      border-right: 1px solid #ddd;
+      padding: 20px;
+      overflow-y: auto;
+    }
+    .content {
+      margin-left: 240px;
+      padding: 20px;
+    }
+    .sidebar a {
+      display: block;
+      padding: 8px 0;
+      color: #333;
+      text-decoration: none;
+    }
+    .sidebar a:hover {
+      text-decoration: underline;
+    }
+    @media (max-width: 992px) {
+      .sidebar {
+        position: relative;
+        width: 100%;
+        height: auto;
+        border-right: none;
+      }
+      .content {
+        margin-left: 0;
+      }
+    }
+
+  </style>
+</head>
+<body>
+  <!-- Top Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="../index.html">Arnav</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Sidebar Navigation -->
+  <div class="sidebar">
+    <h5 class="fw-bold">Table of Contents</h5>
+    <a href="#abstract">Abstract</a>
+    <a href="#objective">Objective</a>
+    <a href="#features">Features</a>
+    <a href="#literature-review">Literature Review</a>
+    <a href="#system-design">System Design & Architecture</a>
+    <a href="#results-future">Results & Future Work</a>
+    <a href="#screenshots">Screenshots</a>
+    <a href="#disclaimer">Disclaimer</a>
+  </div>
+
+  <!-- Main Content -->
+  <div class="content">
+    <section id="abstract" class="py-5">
+      <h2 class="fw-bold">Abstract</h2>
+      <p>
+        During emergency medical situations, especially in rural and urban hospitals, finding blood donors of a specific blood group can be time-critical. 
+        This project automates the donor calling process using an IVR (Interactive Voice Response) system powered by Twilio and integrates a confirmation mechanism for donors via keypad input. 
+        The system also stores donor details and call history using Supabase, enabling quick and reliable communication during emergencies.
+      </p>
+    </section>
+
+    <section id="objective" class="py-3">
+      <h2 class="fw-bold">Objective</h2>
+      <ul>
+        <li>Automate donor notification to reduce response time.</li>
+        <li>Allow donors to confirm availability by pressing a digit on their phone.</li>
+        <li>Provide hospitals with a dashboard to track call status, confirmations, and donor history.</li>
+        <li>Maintain a centralized donor database for quick access.</li>
+      </ul>
+    </section>
+
+    <section id="features" class="py-3">
+      <h2 class="fw-bold">Features</h2>
+      <ul>
+      </ul>
+    </section>
+
+    <section id="literature-review" class="py-3">
+      <h2 class="fw-bold">Literature Review</h2>
+      <ul>
+        <li><strong>Asterisk Open Source PBX:</strong> Widely used for automated call handling and IVR in both corporate and healthcare sectors. 
+          <a href="https://www.asterisk.org/" target="_blank">Read more</a>
+        </li>
+        <li><strong>Twilio IVR for Nonprofits:</strong> Used by NGOs to coordinate volunteers and blood donors during crises. 
+          <a href="https://www.twilio.org/" target="_blank">Read more</a>
+        </li>
+        <li><strong>NHS Blood and Transplant UK:</strong> Utilizes automated calling & SMS to reach registered donors quickly. 
+          <a href="https://www.blood.co.uk/" target="_blank">Read more</a>
+        </li>
+      </ul>
+    </section>
+
+    <section id="system-design" class="py-3">
+      <h2 class="fw-bold">System Design & Architecture</h2>
+      <div class="table-responsive">
+        <table class="table table-bordered">
+          <thead class="table-light">
+            <tr>
+              <th>Component</th>
+              <th>Technology Used</th>
+              <th>Reason</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Backend</td>
+              <td>Flask (Python)</td>
+              <td>Lightweight, easy to integrate with APIs</td>
+            </tr>
+            <tr>
+              <td>Database</td>
+              <td>Supabase</td>
+              <td>Serverless, real-time updates</td>
+            </tr>
+            <tr>
+              <td>IVR & Calls</td>
+              <td>Twilio</td>
+              <td>Reliable and easy to integrate with Python</td>
+            </tr>
+            <tr>
+              <td>Frontend UI</td>
+              <td>Bootstrap</td>
+              <td>Quick UI development, responsive</td>
+            </tr>
+            <tr>
+              <td>Hosting</td>
+              <td>Railway</td>
+              <td>Simple deployment for Flask apps</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h5 class="fw-semibold mt-3">System Architecture Diagram</h5>
+      <img src="assets/system_architecture.png" class="img-fluid rounded shadow mb-3" alt="System Architecture">
+
+      <h5 class="fw-semibold mt-3">Sequence Diagram</h5>
+      <img src="assets/uml_diagram.png" class="img-fluid rounded shadow mb-3" alt="Sequence Diagram">
+    </section>
+
+    <section id="screenshots" class="py-3">
+      <h2 class="fw-bold">Screenshots</h2>
+      <h5 class="fw-semibold mt-3">Login</h5>
+      <img src="assets/1.png" class="img-fluid rounded shadow mb-3" alt="Screenshot 1">
+      <h5 class="fw-semibold mt-3">Dashboard</h5>
+      <img src="assets/2.png" class="img-fluid rounded shadow mb-3" alt="Screenshot 2">
+      <h5 class="fw-semibold mt-3">Donor form</h5>
+      <img src="assets/3.png" class="img-fluid rounded shadow mb-3" alt="Screenshot 3">
+      <h5 class="fw-semibold mt-3">Main Calling Dashboard</h5>
+      <img src="assets/4.png" class="img-fluid rounded shadow mb-3" alt="Screenshot 5">
+      <h5 class="fw-semibold mt-3">View Previous Request</h5>
+      <img src="assets/5.png" class="img-fluid rounded shadow mb-3" alt="Screenshot 6">
+    </section>
+
+    <section id="results-future" class="py-3">
+      <h2 class="fw-bold">Results & Future Work</h2>
+      <h5>Current State</h5>
+      <p>Prototype implementation present. No production testing done yet.</p>
+
+      <h5>Future Work</h5>
+      <ul>
+        <li>Add retries & backoff logic for failed calls.</li>
+        <li>Add multilingual IVR messages.</li>
+        <li>Add robust logging, monitoring, and unit/integration tests.</li>
+        <li>Build an official deploy pipeline and secrets management.</li>
+      </ul>
+    </section>
+
+    <section id="disclaimer" class="py-3">
+      <h2 class="fw-bold">Disclaimer</h2>
+      <blockquote class="blockquote">
+        A working version of this product is ready and is currently in the process of being deployed as an integrated package alongside other systems.  
+        No claims are being made at this stage, as the system has not yet been tested in real-world scenarios and may still have certain issues.  
+        The final product will not be a standalone solution but will be incorporated as part of a larger website with additional features.
+      </blockquote>
+    </section>
+
+
+    <a href="../../index.html#projects" class="btn btn-dark mt-4 mb-5">← Back to Projects</a>
+  </div>
+
+  <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
