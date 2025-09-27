@@ -9,3 +9,12 @@
 #hero a:hover {
   color: #ffffff;
 }
+
+#skills i {
+  transition: transform 0.3s, filter 0.3s;
+}
+
+#skills i:hover {
+  transform: scale(1.2);
+  filter: drop-shadow(0 0 5px #bfbfbf);
+}
