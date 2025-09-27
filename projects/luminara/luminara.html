@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Luminara: AI for Exoplanet Detection</title>
+  <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../../css/style.css">
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+  <link rel="stylesheet" href="../../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+
+  <style>
+    body {
+      scroll-behavior: smooth;
+    }
+    .sidebar {
+      position: fixed;
+      top: 70px;
+      left: 0;
+      height: 100%;
+      width: 220px;
+      background-color: #f8f9fa;
+      border-right: 1px solid #ddd;
+      padding: 20px;
+      overflow-y: auto;
+    }
+    .content {
+      margin-left: 240px;
+      padding: 20px;
+    }
+    .sidebar a {
+      display: block;
+      padding: 8px 0;
+      color: #333;
+      text-decoration: none;
+    }
+    .sidebar a:hover {
+      text-decoration: underline;
+    }
+    section::before {
+      content: "";
+      display: block;
+      height: 80px;
+      margin-top: -80px;
+      visibility: hidden;
+    }
+    @media (max-width: 992px) {
+      .sidebar {
+        position: relative;
+        width: 100%;
+        height: auto;
+        border-right: none;
+      }
+      .content {
+        margin-left: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Top Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="../../index.html">Arnav</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="ms-auto d-flex align-items-center">
+        <a href="https://github.com/arnavt1605/Luminara" target="_blank" class="btn btn-outline-dark d-flex align-items-center">
+            <i class="bi bi-github me-2"></i> View on GitHub
+        </a>
+    </div>
+    </div>
+  </nav>
+
+  <!-- Sidebar Navigation -->
+  <div class="sidebar">
+    <h5 class="fw-bold">Table of Contents</h5>
+    <a href="#abstract">Abstract</a>
+    <a href="#features">Features & Pipeline</a>
+    <a href="#screenshots">Screenshots & Visualization</a>
+  </div>
+
+  <!-- Main Content -->
+  <div class="content">
+    <!-- Abstract Section -->
+    <section id="abstract" class="py-5">
+      <h2 class="fw-bold">Abstract</h2>
+      <p>
+        Luminara bridges the gap between astrophysics and artificial intelligence by providing an interpretable, visual, and interactive platform for exoplanet detection. 
+        The system leverages high-precision stellar data, advanced signal preprocessing, and a custom deep learning model to identify potential exoplanet transits. 
+        Unlike black-box AI models, Luminara emphasizes interpretability through saliency maps, confidence scoring, and calibrated probabilities, making it suitable for both researchers and educational purposes.
+      </p>
+      <p>
+        The primary goal is to automate and simplify the process of analyzing flux data from stars while providing insights that human researchers can understand and trust.
+      </p>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-3">
+      <h2 class="fw-bold">Features & Pipeline</h2>
+
+      <h5 class="fw-semibold mt-3">1. Stellar Data Retrieval</h5>
+      <p>
+        Input a TIC ID and Luminara fetches contextual stellar metadata such as RA, DEC, magnitude, and other catalog information. 
+        This provides essential context for interpreting flux data and potential exoplanet candidates.
+      </p>
+
+      <h5 class="fw-semibold mt-3">2. Flux Time Series Processing</h5>
+      <p>
+        Uses Python's <code>lightkurve</code> library to retrieve flux versus time data. Preprocessing includes:
+      </p>
+      <ul>
+        <li>Median Absolute Deviation (MAD) for outlier removal</li>
+        <li>Normalization and scaling for consistent model input</li>
+        <li>Handling missing or corrupted data points for robust analysis</li>
+      </ul>
+
+      <h5 class="fw-semibold mt-3">3. Custom Deep Learning Model</h5>
+      <p>
+        Luminara uses a PyTorch-based CNN trained on the Kepler mission dataset. The model is tailored for sequential astrophysical signals and includes:
+      </p>
+      <ul>
+        <li><strong>Saliency Map Generation:</strong> Highlights regions in flux data corresponding to possible exoplanet transits, improving interpretability.</li>
+        <li><strong>Region-specific Confidence Scoring:</strong> Assigns localized probabilities to candidate regions.</li>
+        <li><strong>Temperature Scaling:</strong> Applies softmax calibration to produce reliable confidence estimates, reducing overconfident predictions.</li>
+      </ul>
+
+      <h5 class="fw-semibold mt-3">4. Interactive Visualization Dashboard</h5>
+      <p>
+        Luminara provides intuitive visualizations to make the results accessible and actionable:
+      </p>
+      <ul>
+        <li>Flux vs. Time plots with saliency overlays</li>
+        <li>Highlighted candidate regions for potential exoplanet transits</li>
+        <li>Confidence metrics summarizing model predictions</li>
+        <li>Downloadable plots and summaries for further analysis</li>
+      </ul>
+
+      <h5 class="fw-semibold mt-3">5.Highlights</h5>
+      <ul>
+        <li>End-to-end scientific AI pipeline from raw stellar data to interpretable results</li>
+        <li>Integration of advanced preprocessing, CNN, and calibrated confidence techniques</li>
+        <li>Strong focus on interpretability, making the system trustworthy for domain experts</li>
+        <li>Interactive dashboard demonstrates full-stack AI capability: Python backend + visualization + user interaction</li>
+      </ul>
+    </section>
+
+    <!-- Screenshots Section -->
+    <section id="screenshots" class="py-4">
+      <h2 class="fw-bold">Screenshots & Visualization</h2>
+      <div class="row g-4 mb-4">
+        <div class="col-md-6">
+          <img src="assets/1.png" class="img-fluid rounded shadow" alt="Luminara Dashboard Screenshot 1">
+        </div>
+        <div class="col-md-6">
+          <img src="assets/2.png" class="img-fluid rounded shadow" alt="Luminara Dashboard Screenshot 2">
+        </div>
+      </div>
+      <p class="text-muted">
+        Example visualizations showing flux vs. time plots with saliency overlays and candidate confidence scores. These interactive dashboards make exoplanet detection interpretable and accessible.
+      </p>
+    </section>
+
+    <!-- Back Button -->
+    <a href="../../index.html#projects" class="btn btn-dark mt-4 mb-5">← Back to Projects</a>
+  </div>
+
+  <script src="../../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
