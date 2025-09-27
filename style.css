@@ -1,0 +1,11 @@
+#hero img {
+  border: 4px solid #fff;
+}
+
+#hero a {
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+#hero a:hover {
+  color: #ffffff; /* Bootstrap primary blue */
+}
